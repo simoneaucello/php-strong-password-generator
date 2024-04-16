@@ -1,5 +1,17 @@
 <?php
 
+function generateRandomPassword()
+{
+  $lowercase_letters = 'abcdefghijklmnopqrstuvwxyz';
+  $uppercase_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $numbers = '0123456789';
+  $symbols = '!?&%$<>^+-*/()[]{}@#_=';
+
+  $characters = $lowercase_letters . $uppercase_letters . $numbers . $symbols;
+
+  $password = '';
+}
+
 include __DIR__ . '/partials/head.php'
 
 ?>
