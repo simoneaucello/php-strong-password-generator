@@ -27,10 +27,9 @@ function generateRandomPassword($length)
   return $password;
 }
 
-var_dump(generateRandomPassword($_GET['password_length']));
-
 
 $password_length = $_GET['password_length'];
+
 
 include __DIR__ . '/partials/head.php'
 
@@ -50,6 +49,26 @@ include __DIR__ . '/partials/head.php'
 
         <div class=" d-flex justify-content-center">
           <button type="submit" class="btn btn-danger">GENERA PASSWORD</button>
+        </div>
+
+        <div class="text-center mt-5">
+          <h2>La password generata è: </h2>
+          <h3>
+            <?php
+            if (isset($password_length)) {
+              // Genera la password solo se la lunghezza è valida
+              if (is_numeric($password_length) && $password_length >= 4) {
+                $generated_password = generateRandomPassword($password_length);
+                echo "<strong>$generated_password</strong>";
+              } else {
+                echo "<p style='color: red;'>La lunghezza della password deve essere almeno di 4 caratteri.</p>";
+              }
+            }
+            ?>
+          </h3>
+
+
+
         </div>
 
 
